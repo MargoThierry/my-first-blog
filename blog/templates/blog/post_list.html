@@ -6,12 +6,13 @@
         <div>
             <h1><a href="http://open-steps.org/">Open Steps</a>'s cooking blog</h1>
         </div>
-        <div>
-            <h2>Introduction</h2>
-            <p>This idea arose during our worldtrip.</p>
-        </div>
-        <div>
-            <h2>Table of Contents</h2>
-        </div>
+
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1>{{post.title}}</h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
